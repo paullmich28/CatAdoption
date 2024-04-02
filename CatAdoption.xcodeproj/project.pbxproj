@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC645EEF2BBBB42C004EFDAC /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC645EEE2BBBB42C004EFDAC /* PetModel.swift */; };
 		AC955C972BBB9BCC0081B6C1 /* CatAdoptionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC955C962BBB9BCC0081B6C1 /* CatAdoptionApp.swift */; };
 		AC955C992BBB9BCC0081B6C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC955C982BBB9BCC0081B6C1 /* ContentView.swift */; };
 		AC955C9B2BBB9BCD0081B6C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC955C9A2BBB9BCD0081B6C1 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC645EEE2BBBB42C004EFDAC /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
 		AC955C932BBB9BCC0081B6C1 /* CatAdoption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatAdoption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC955C962BBB9BCC0081B6C1 /* CatAdoptionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAdoptionApp.swift; sourceTree = "<group>"; };
 		AC955C982BBB9BCC0081B6C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				AC955C9A2BBB9BCD0081B6C1 /* Assets.xcassets */,
 				AC955C9C2BBB9BCD0081B6C1 /* Preview Content */,
 				AC955CA42BBB9BDF0081B6C1 /* PetAdoptionView.swift */,
+				AC645EEE2BBBB42C004EFDAC /* PetModel.swift */,
 			);
 			path = CatAdoption;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				AC955CA72BBB9C380081B6C1 /* FilterView.swift in Sources */,
 				AC955C992BBB9BCC0081B6C1 /* ContentView.swift in Sources */,
 				AC955CA52BBB9BDF0081B6C1 /* PetAdoptionView.swift in Sources */,
+				AC645EEF2BBBB42C004EFDAC /* PetModel.swift in Sources */,
 				AC955C972BBB9BCC0081B6C1 /* CatAdoptionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

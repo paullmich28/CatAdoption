@@ -11,16 +11,12 @@ struct PetAdoptionView: View {
     
     @State private var isFilterViewPresented = false
     
+    let leppyData = PetModel.generateLeppyData()
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 16) {
-                PetCard(name: "Leppy", type: "Domestic", distance: 1, weight: 3, gender: "Male", imageName: "Leppy")
-                    .shadow(radius: 10)
-                PetCard(name: "Butet", type: "Persian", distance: 3, weight: 5, gender: "Female", imageName: "Butet")
-                    .shadow(radius: 10)
-                PetCard(name: "Sky", type: "Domestic", distance: 8, weight: 4, gender: "Female", imageName: "Sky")
-                    .shadow(radius: 10)
-                PetCard(name: "Kentang", type: "British Shorthair", distance: 8, weight: 4, gender: "Female", imageName: "Kentang")
+                PetCard(petModel: leppyData, imageName: leppyData.name)
                     .shadow(radius: 10)
                 
                 Spacer()
@@ -43,19 +39,15 @@ struct PetAdoptionView: View {
 }
 
 struct PetCard: View {
-    let name: String
-    let type: String
-    let distance: Int
-    let weight: Int
-    let gender: String
-    var imageName: String
+    var petModel: PetModel
     
+    var imageName: String
     
     var body: some View {
         HStack {
             ImageView(imageName: imageName)
                 .background(Color(.white))
-            PetInfo(type: type, name: name, distance: distance, weight: weight, gender: gender)
+            PetInfo(type: petModel.type, name: petModel.name, distance: petModel.distance, weight: petModel.weight, gender: petModel.gender)
                 .padding(.horizontal, 10.0)
         }
         .frame(height: 120)
@@ -67,8 +59,8 @@ struct PetCard: View {
 struct PetInfo: View {
     let type: String
     let name: String
-    let distance: Int
-    let weight: Int
+    let distance: Double
+    let weight: Double
     let gender: String
     
     var body: some View {
@@ -98,7 +90,7 @@ struct PetInfo: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 14, height: 14)
                         .opacity(calculateDistanceOpacity(distance: distance))
-                    Text("\(distance) km")
+                    Text("\(distance, specifier: "%.1f") km")
                         .font(.system(size: 12, weight: .regular))
                         .foregroundColor(.gray)
                     Spacer()
@@ -110,7 +102,7 @@ struct PetInfo: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 14, height: 14)
                         .opacity(calculateWeightOpacity(weight: weight))
-                    Text("\(weight) kg")
+                    Text("\(weight, specifier: "%.1f") kg")
                         .font(.system(size: 12, weight: .regular))
                         .foregroundColor(.gray)
                     Spacer()
@@ -130,7 +122,7 @@ struct PetInfo: View {
         }.padding(.vertical, 16.0)
     }
     
-    func calculateWeightOpacity(weight: Int) -> Double{
+    func calculateWeightOpacity(weight: Double) -> Double{
         if weight > 4{
             return 1.0
         }else{
@@ -138,7 +130,7 @@ struct PetInfo: View {
         }
     }
     
-    func calculateDistanceOpacity(distance: Int) -> Double{
+    func calculateDistanceOpacity(distance: Double) -> Double{
         if distance >= 5{
             return 1.0
         }else{
