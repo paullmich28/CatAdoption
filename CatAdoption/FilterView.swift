@@ -12,6 +12,9 @@ struct FilterView: View {
     
     @State private var filtersSelectedCount = 0
     
+    //Test Commit
+    var test: Int = 0
+    
     // State variables to store button tap count
     @State private var breedTapCount = 0
     @State private var genderTapCount = 0
